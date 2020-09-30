@@ -24,7 +24,7 @@ data class AccountHolder (
 )
 
 data class AccountMetadata (
-    val image_URL: String
+    val image_URL: String?
 )
 
 data class AccountDetails (
@@ -34,7 +34,7 @@ data class AccountDetails (
 data class TxValue (
     val amount: BigDecimal,
     val currency: String,
-    val type: String,
-    val description: String
+    val type: String?,
+    val description: String?
 )
 
