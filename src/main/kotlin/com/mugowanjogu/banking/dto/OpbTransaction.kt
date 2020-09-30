@@ -28,13 +28,13 @@ data class AccountMetadata (
 )
 
 data class AccountDetails (
-    val value: TxValue
+    val value: TxValue,
+    val type: String,
+    val description: String
 )
 
 data class TxValue (
     val amount: BigDecimal,
-    val currency: String,
-    val type: String?,
-    val description: String?
+    val currency: String
 )
 

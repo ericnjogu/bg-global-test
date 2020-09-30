@@ -5,6 +5,7 @@ import com.mugowanjogu.banking.dto.OpbTransactionList
 import org.apache.commons.logging.LogFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
+import org.springframework.web.client.HttpClientErrorException
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.getForEntity
 import java.math.BigDecimal
@@ -20,21 +21,30 @@ class DefaultTransactionService: TransactionService {
     lateinit var txUrl: String
 
     override fun transactionList(accountId: String): List<OpbTransaction> {
-        log.debug("getting transaction list from '$txUrl'")
         val restTemplate = RestTemplate()
-        val response = restTemplate.getForEntity<OpbTransactionList>(
-                url = txUrl,
-                accountId
-        )
 
-        return response.body.transactions
+        return try {
+            val response = restTemplate.getForEntity<OpbTransactionList>(
+                    url = txUrl,
+                    accountId
+            )
+            response.body.transactions
+        } catch (e: HttpClientErrorException) {
+            log.error(e)
+            emptyList()
+        }
     }
 
     override fun transactionsByType(accountId: String, type: String): List<OpbTransaction> {
-        TODO("Not yet implemented")
+        val list = transactionList(accountId = accountId)
+        return list.filter { it.details.type == type }
     }
 
     override fun totalForTransactionsType(accountId: String, type: String): BigDecimal {
-        TODO("Not yet implemented")
+        val list = transactionsByType(accountId = accountId, type = type)
+        var total = BigDecimal.ZERO
+        list.forEach { total = total.add(it.details.value.amount) }
+
+        return total
     }
 }
