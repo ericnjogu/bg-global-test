@@ -11,10 +11,10 @@ import org.springframework.web.client.getForEntity
 import java.math.BigDecimal
 
 @Service
-class DefaultTransactionService: TransactionService {
+class DefaultOpbTransactionService: OpbTransactionService {
 
     companion object {
-        val log = LogFactory.getLog(DefaultTransactionService::class.java)
+        val log = LogFactory.getLog(DefaultOpbTransactionService::class.java)
     }
 
     @Value("\${opb.tx.url}")
