@@ -8,9 +8,10 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
+import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig
 import java.math.BigDecimal
 
-@SpringJUnitConfig(classes = [AppConfig::class])
+@SpringJUnitWebConfig(classes = [AppConfig::class])
 internal class DefaultOpbTransactionServiceIntegrationTest {
 
     companion object {
