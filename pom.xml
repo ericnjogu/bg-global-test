@@ -35,6 +35,11 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -76,6 +81,21 @@
             <artifactId>jackson-module-kotlin</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.mockk/mockk -->
+        <dependency>
+            <groupId>io.mockk</groupId>
+            <artifactId>mockk</artifactId>
+            <version>1.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

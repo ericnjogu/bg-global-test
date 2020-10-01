@@ -6,5 +6,5 @@ import org.springframework.context.annotation.PropertySource
 
 @Configuration
 @ComponentScan(basePackages = ["com.mugowanjogu.banking.service"])
-@PropertySource("bg-app.properties")
+@PropertySource("classpath:bg-app.properties")
 open class AppConfig
