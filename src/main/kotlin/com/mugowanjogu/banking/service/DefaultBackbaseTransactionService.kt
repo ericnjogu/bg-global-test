@@ -7,10 +7,12 @@ import org.apache.commons.logging.LogFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.math.BigDecimal
 
 @RestController
+@RequestMapping("/account")
 class DefaultBackbaseTransactionService: BackbaseTransactionService {
 
     companion object {
@@ -20,7 +22,7 @@ class DefaultBackbaseTransactionService: BackbaseTransactionService {
     @Autowired
     lateinit var opbTransactionService: OpbTransactionService
 
-    @GetMapping("/account/transactions/{accountId}/list")
+    @GetMapping("/transactions/{accountId}/list")
     override fun transactionList(@PathVariable accountId: String): List<BackbaseTransaction> {
         log.info("getting transaction list for account $accountId")
         return opbTransactionService.transactionList(accountId).map {
@@ -28,7 +30,7 @@ class DefaultBackbaseTransactionService: BackbaseTransactionService {
         }
     }
 
-    @GetMapping("/account/transactions/{accountId}/type/{type}/list")
+    @GetMapping("/transactions/{accountId}/type/{type}/list")
     override fun transactionsByType(@PathVariable accountId: String, @PathVariable type: String): List<BackbaseTransaction> {
         log.info("getting transactions by type for account '$accountId',  type '$type'")
         return opbTransactionService.transactionsByType(accountId, type).map {
@@ -36,7 +38,7 @@ class DefaultBackbaseTransactionService: BackbaseTransactionService {
         }
     }
 
-    @GetMapping("/account/{accountId}/type/{type}/total")
+    @GetMapping("/{accountId}/type/{type}/total")
     override fun totalForTransactionsType(@PathVariable accountId: String, @PathVariable type: String): BigDecimal {
         return opbTransactionService.totalForTransactionsType(accountId, type)
     }
