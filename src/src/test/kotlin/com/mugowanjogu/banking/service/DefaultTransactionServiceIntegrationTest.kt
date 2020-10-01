@@ -52,7 +52,7 @@ internal class DefaultTransactionServiceIntegrationTest {
     fun `totalForTransactionsType() should return correct total for known type`() {
         val total = transactionService.totalForTransactionsType("savings-kids-john", "SEPA")
         log.debug("account: savings-kids-john, type: SEPA -> total is $total")
-        assertEquals(0, total.compareTo(BigDecimal(25.80)), "tx type total")
+        assertEquals("25.80", total.toString(), "tx type total")
     }
 
     @org.junit.jupiter.api.Test
