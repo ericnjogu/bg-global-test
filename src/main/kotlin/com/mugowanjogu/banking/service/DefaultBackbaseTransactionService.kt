@@ -24,7 +24,7 @@ class DefaultBackbaseTransactionService: BackbaseTransactionService {
 
     @GetMapping("/transactions/{accountId}/list")
     override fun transactionList(@PathVariable accountId: String): List<BackbaseTransaction> {
-        log.info("getting transaction list for account $accountId")
+        log.debug("getting transaction list for account $accountId")
         return opbTransactionService.transactionList(accountId).map {
             tx -> mapOpbToBackbaseTransaction(tx)
         }
@@ -32,7 +32,7 @@ class DefaultBackbaseTransactionService: BackbaseTransactionService {
 
     @GetMapping("/transactions/{accountId}/type/{type}/list")
     override fun transactionsByType(@PathVariable accountId: String, @PathVariable type: String): List<BackbaseTransaction> {
-        log.info("getting transactions by type for account '$accountId',  type '$type'")
+        log.debug("getting transactions by type for account '$accountId',  type '$type'")
         return opbTransactionService.transactionsByType(accountId, type).map {
             tx -> mapOpbToBackbaseTransaction(tx)
         }

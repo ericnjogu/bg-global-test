@@ -50,8 +50,10 @@ internal class DefaultBackbaseTransactionServiceWebTest {
     fun `transactionList() should fetch expected transactions`() {
         mockMvc.get("/account/transactions/{accountId}/list", "test-id") {
             accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isOk }
+        }
+            .andDo { print() }
+            .andExpect {
+                status { isOk }
         }
     }
 
@@ -59,8 +61,10 @@ internal class DefaultBackbaseTransactionServiceWebTest {
     fun `transactionsByType() should fetch expected transactions`(){
         mockMvc.get("/account/transactions/{accountId}/type/{type}/list", "test-id", "hepa") {
             accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isOk }
+        }
+            .andDo { print() }
+            .andExpect {
+                status { isOk }
         }
     }
 
@@ -68,8 +72,10 @@ internal class DefaultBackbaseTransactionServiceWebTest {
     fun `totalForTransactionsType() should produce expected total`() {
         mockMvc.get("/account/{accountId}/type/{type}/total", "test-id", "hepa") {
             accept = MediaType.APPLICATION_JSON
-        }.andExpect {
-            status { isOk }
+        }
+            .andDo { print() }
+            .andExpect {
+                status { isOk }
         }
     }
 }
