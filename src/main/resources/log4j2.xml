@@ -8,6 +8,7 @@
     <Loggers>
         <Logger name="org.springframework.web.client" level="DEBUG"/>
         <Logger name="com.mugowanjogu.banking.service" level="DEBUG"/>
+        <Logger name="org.springframework.security" level="DEBUG"/>
         <Root level="error">
             <AppenderRef ref="Console"/>
         </Root>
