@@ -1,8 +1,9 @@
 # Technical Test 2.0
 ## Transaction list service endpoints
+After starting the app as detailed in the [running section](#running-application) below, try the endpoints below.
 - [Transactions for account `savings-kids-john`](http://localhost:8080/account/transactions/savings-kids-john/list)
-- [Transactions for account `savings-kids-john`, type `SEPA`](href="http://localhost:8080/account/transactions/savings-kids-john/type/SEPA/list")
-- [Transactions total for account savings-kids-john, type SEPA](href="http://localhost:8080/account/savings-kids-john/type/SEPA/total")
+- [Transactions for account `savings-kids-john`, type `SEPA`](http://localhost:8080/account/transactions/savings-kids-john/type/SEPA/list)
+- [Transactions total for account `savings-kids-john`, type `SEPA`](http://localhost:8080/account/savings-kids-john/type/SEPA/total)
 
 ## Running application
 `mvn jetty:run`
