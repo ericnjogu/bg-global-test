@@ -51,7 +51,7 @@ internal class DefaultBackbaseTransactionServiceWebTest {
         mockMvc.get("/account/transactions/{accountId}/list", "test-id") {
             accept = MediaType.APPLICATION_JSON
         }
-            .andDo { print() }
+            //.andDo { print() }
             .andExpect {
                 status { isOk }
         }
@@ -62,7 +62,7 @@ internal class DefaultBackbaseTransactionServiceWebTest {
         mockMvc.get("/account/transactions/{accountId}/type/{type}/list", "test-id", "hepa") {
             accept = MediaType.APPLICATION_JSON
         }
-            .andDo { print() }
+            //.andDo { print() }
             .andExpect {
                 status { isOk }
         }
@@ -73,7 +73,7 @@ internal class DefaultBackbaseTransactionServiceWebTest {
         mockMvc.get("/account/{accountId}/type/{type}/total", "test-id", "hepa") {
             accept = MediaType.APPLICATION_JSON
         }
-            .andDo { print() }
+            //.andDo { print() }
             .andExpect {
                 status { isOk }
         }
