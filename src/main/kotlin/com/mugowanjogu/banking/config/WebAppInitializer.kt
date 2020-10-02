@@ -1,4 +1,4 @@
-package com.mugowanjogu.banking
+package com.mugowanjogu.banking.config
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer
 

@@ -1,6 +1,6 @@
 package com.mugowanjogu.banking.service
 
-import com.mugowanjogu.banking.AppConfig
+import com.mugowanjogu.banking.config.AppConfig
 import com.mugowanjogu.banking.dto.OpbTransaction
 import com.mugowanjogu.banking.service.DefaultBackbaseTransactionServiceUnitTest.Companion.getTestOpbTransaction
 import io.mockk.every

@@ -1,13 +1,12 @@
 package com.mugowanjogu.banking.service
 
-import com.mugowanjogu.banking.AppConfig
+import com.mugowanjogu.banking.config.AppConfig
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig
 import java.math.BigDecimal
 
